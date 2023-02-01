@@ -1,5 +1,6 @@
 package dev.gabrielgianelli.cleanarch9.unit;
 
+import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
@@ -30,5 +31,10 @@ public class OrderTests {
         var totalValue = order.totalValue();
         var expectedTotalValue = 13940.00;
         assertEquals(totalValue, expectedTotalValue);
+    }
+
+    @Test
+    public void shouldNotBeAbleToMakeAnOrderWithInvalidCPF() {
+        assertThrows(RuntimeException.class, () -> new Order("892.078.830-00", null));
     }
 }
