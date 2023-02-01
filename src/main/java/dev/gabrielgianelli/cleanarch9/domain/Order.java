@@ -20,9 +20,11 @@ public class Order {
     }
 
     public double totalValue() {
-        return orderItems
+        var totalValue = orderItems
             .stream()
             .map(item -> item.totalValue())
             .reduce(0.0, (total, current) -> total + current);
+        if (voucher != null) totalValue *= (100 - voucher.getDiscountPercentage()) / 100;
+        return totalValue;
     }
 }
