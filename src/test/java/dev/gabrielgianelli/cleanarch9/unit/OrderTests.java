@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import dev.gabrielgianelli.cleanarch9.domain.Order;
-import dev.gabrielgianelli.cleanarch9.domain.Product;
-import dev.gabrielgianelli.cleanarch9.domain.Voucher;
+import dev.gabrielgianelli.cleanarch9.domain.entity.Order;
+import dev.gabrielgianelli.cleanarch9.domain.entity.Product;
+import dev.gabrielgianelli.cleanarch9.domain.entity.Voucher;
 
 public class OrderTests {
     @Test

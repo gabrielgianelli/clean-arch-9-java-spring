@@ -1,4 +1,4 @@
-package dev.gabrielgianelli.cleanarch9.domain;
+package dev.gabrielgianelli.cleanarch9.domain.entity;
 
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;

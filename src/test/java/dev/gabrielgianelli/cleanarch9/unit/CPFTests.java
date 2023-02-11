@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import dev.gabrielgianelli.cleanarch9.domain.CPF;
+import dev.gabrielgianelli.cleanarch9.domain.entity.CPF;
 
 public class CPFTests {
     @Test

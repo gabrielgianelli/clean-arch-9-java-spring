@@ -1,4 +1,4 @@
-package dev.gabrielgianelli.cleanarch9.domain;
+package dev.gabrielgianelli.cleanarch9.domain.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +15,20 @@ public class Order {
         this.orderItems = new ArrayList<OrderItem>();
     }
 
+    public Long id() {
+        return id;
+    }
+
+    public CPF cpf() {
+        return cpf;
+    }
+
+    public List<OrderItem> items() {
+        return this.orderItems;
+    }
+
     public void addItem(Product product, Integer quantity) {
-        this.orderItems.add(new OrderItem(product, quantity));
+        orderItems.add(new OrderItem(product, quantity));
     }
 
     public double totalValue() {
@@ -24,7 +36,7 @@ public class Order {
             .stream()
             .map(item -> item.totalValue())
             .reduce(0.0, (total, current) -> total + current);
-        if (voucher != null) totalValue *= (100 - voucher.getDiscountPercentage()) / 100;
+        if (voucher != null) totalValue *= (100 - voucher.percentageDiscount()) / 100;
         return totalValue;
     }
 }

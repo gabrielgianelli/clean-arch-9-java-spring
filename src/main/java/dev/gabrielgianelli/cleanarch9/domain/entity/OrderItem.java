@@ -1,4 +1,4 @@
-package dev.gabrielgianelli.cleanarch9.domain;
+package dev.gabrielgianelli.cleanarch9.domain.entity;
 
 public class OrderItem {
     private Long id;
@@ -19,5 +19,17 @@ public class OrderItem {
     private void setQuantity(int quantity) {
         if (quantity <= 0) throw new RuntimeException("Quantity cannot be less than 1");
         this.quantity = quantity;
+    }
+
+    public String description() {
+        return description;
+    }
+
+    public Double price() {
+        return price;
+    }
+
+    public int quantity() {
+        return quantity;
     }
 }
