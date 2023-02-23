@@ -1,5 +1,6 @@
 package dev.gabrielgianelli.cleanarch9.domain.entity;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,10 @@ public class Order {
 
     public Order(String cpf, Voucher voucher) {
         this.cpf = new CPF(cpf);
-        this.voucher = voucher;
+        if (voucher != null) {
+            if (voucher.expirationDate().isBefore(LocalDate.now())) throw new RuntimeException("Voucher expired.");
+            this.voucher = voucher;
+        } 
         this.orderItems = new ArrayList<OrderItem>();
     }
 

@@ -1,5 +1,7 @@
 package dev.gabrielgianelli.cleanarch9.infra.model;
 
+import java.time.LocalDate;
+
 import dev.gabrielgianelli.cleanarch9.domain.model.VoucherModel;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,17 +17,25 @@ public class VoucherModelJpa implements VoucherModel {
     private Long id;
     private String description;
     private double percentageDiscount;
-    
+    private LocalDate expirationDate;
+
     @Override
     public Long id() {
         return this.id;
     }
+
     @Override
     public String description() {
         return this.description;
     }
+
     @Override
     public double percentageDiscount() {
         return this.percentageDiscount;
+    }
+    
+    @Override
+    public LocalDate expirationDate() {
+        return this.expirationDate;
     }
 }
